@@ -40,6 +40,7 @@ public class Mobile {
 		System.out.println("inside get application by app name");
 		if(applications!=null) {
 			for(int i=0;i<applications.length;i++) {
+				if(applications[i]!=null) {
 				if(applications[i].getAppName().equals(appName)){
 					System.out.println("application found by name:"+appName);
 					f=true;
@@ -47,6 +48,7 @@ public class Mobile {
 				else {
 					f=false;
 				}
+			}
 			}
 		}
 		if(f==false){
@@ -97,7 +99,10 @@ public class Mobile {
 					delete=false;
 				}
 			}
-			if(id!=-1) {
+			if(applications.length==1){
+				applications[0]=null;
+			} 
+			else{
 				for(int i=id;i<applications.length-1;i++) {
 					applications[i]=applications[i+1];
 				}

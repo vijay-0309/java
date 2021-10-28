@@ -39,6 +39,7 @@ public class PhoneApp {
 		ContactsDTO contact=null;
 		if(contacts!=null) {
 			for(int i=0;i<contacts.length;i++){
+				if(contacts[i]!=null) {
 				if(contacts[i].getName().equals(conName)){
 					System.out.println("contact found by name:"+conName);
 					f=true;
@@ -47,6 +48,7 @@ public class PhoneApp {
 				else {
 					f=false;
 				}
+			}
 			}
 		}
 		if(f==false) {
@@ -100,7 +102,10 @@ public class PhoneApp {
 					delete=false;
 				}
 			}
-			if(id!=-1) {
+			if(contacts.length==1){
+				contacts[0]=null;
+			} 
+			else{
 				for(int i=id;i<contacts.length-1;i++) {
 					contacts[i]=contacts[i+1];
 				}

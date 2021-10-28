@@ -8,6 +8,7 @@ public class MobileTester {
 	public static void main(String[] args) {
 	 
 		Scanner sc=new Scanner(System.in);
+		System.out.println("welcome to xiomi mobiles");
 		System.out.println("Enter the number of applications");
 		int size=sc.nextInt();
 		
